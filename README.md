@@ -1,7 +1,7 @@
-UPDATE: This application no longer uses the popup method. Thanks to a [pull request](https://github.com/TheRobBrennan/react-auth0-popup/pull/1) by [@brunokrebs](https://github.com/brunokrebs), this example code has been updated to use some nice in-line authentication with [Auth0](https://auth0.com).
-
 # Welcome
 This project is based off the tutorial [React Tutorial with Popup Authentication: Build a React application using popup authentication and React Hooks](https://auth0.com/blog/build-react-apps-using-react-hooks-and-auth0-auth-popup/).
+
+Thanks to a [pull request](https://github.com/TheRobBrennan/react-with-hooks-and-auth0/pull/1) by [@brunokrebs](https://github.com/brunokrebs), this example code has been updated to use some nice in-line authentication with [Auth0](https://auth0.com).
 
 # TL:DR
 Looking for an abbreviated version of the tutorial? Here is where you can find my crib notes - very much a work-in-progress as I follow along with the tutorial.
