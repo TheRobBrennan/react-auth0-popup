@@ -21,6 +21,19 @@ class App extends Component {
     this.setState({ loggedIn: false })
   }
 
+  async componentDidMount() {
+    try {
+      await auth.handleAuth();
+      window.history.replaceState({}, document.title, '/');
+    } catch (err) {
+      if (!err) {
+        // ignore as this is not a callback
+        return;
+      }
+      console.log(err);
+    }
+  }
+
   render() {
     return (
       <div>

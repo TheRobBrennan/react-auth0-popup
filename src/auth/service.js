@@ -23,6 +23,21 @@ class Auth {
   idTokenPayload = null
   accessToken
 
+  handleAuth() {
+    return new Promise((resolve, reject) => {
+      this.auth0.parseHash((err, authResult) => {
+        if (err) return reject(err);
+        if (!authResult || !authResult.idToken) {
+          // not logged in
+          return resolve();
+        }
+        this.localLogin(authResult)
+        this.accessToken = authResult.accessToken
+        resolve()
+      });
+    });
+  }
+
   localLogin(authResult) {
     localStorage.setItem(this.authFlag, true)
     this.idToken = authResult.idToken
@@ -42,14 +57,7 @@ class Auth {
   }
 
   login() {
-    this.auth0.popup.authorize({}, (err, authResult) => {
-      console.log(err, authResult)
-      if (err) this.localLogout()
-      else {
-        this.localLogin(authResult)
-        this.accessToken = authResult.accessToken
-      }
-    })
+    this.auth0.authorize();
   }
 
   isAuthenticated() {
