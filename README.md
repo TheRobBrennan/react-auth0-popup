@@ -10,8 +10,8 @@ Looking for an abbreviated version of the tutorial? Here is where you can find m
 ### Our web application
 This tutorial requires the latest version of React, which is `React v16.8.0-alpha.0`. This needs to be installed after [create-react-app](https://github.com/facebook/create-react-app) has been installed.
 ```
-$ npx create-react-app react-auth0-popup
-$ cd react-auth0-popup
+$ npx create-react-app react-with-hooks-and-auth0
+$ cd react-with-hooks-and-auth0
 $ npm run start
 
 Verify that create-react-app has successfully installed by visiting [http://localhost:3000](http://localhost:3000) in your web browser.
@@ -26,7 +26,7 @@ To get started with [Auth0](https://auth0.com), please create a free account or 
 
 Ready? Let's go:
 + Click on the big button in the upper right-hand corner that says `+ New Application`
-  - Give the application a name (such as `react-auth0-popup`)
+  - Give the application a name (such as `react-with-hooks-and-auth0`)
   - Click on `Single Page Web App`
   - Click on `Create`
 + Select `React` as the technology we are using for the web app
