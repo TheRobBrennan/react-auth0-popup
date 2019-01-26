@@ -2,6 +2,9 @@
   "name": "react-with-hooks-and-auth0",
   "version": "0.1.0",
   "private": true,
+  "repository": "git@github.com:TheRobBrennan/react-with-hooks-and-auth0.git",
+  "author": "Rob Brennan <rob@therobbrennan.com>",
+  "license": "MIT",
   "dependencies": {
     "auth0-js": "^9.9.0",
     "body-parser": "^1.18.3",
