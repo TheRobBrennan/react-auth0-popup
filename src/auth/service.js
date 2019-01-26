@@ -3,10 +3,10 @@ import * as Auth0 from 'auth0-js'
 
 class Auth {
   auth0 = new Auth0.WebAuth({
-    domain: config.domain,
-    clientID: config.clientId,
-    redirectUri: config.redirect,
-    audience: config.audience,
+    domain: config.domain,  // TODO: Define client env var for AUTH0_DOMAIN
+    clientID: config.clientId,  // TODO: Define client env var for AUTH0_CLIENT_ID
+    redirectUri: config.redirect, // TODO: Define client env var for AUTH0_REDIRECT_URL
+    audience: config.audience,  // TODO: Define client env var for AUTH0_AUDIENCE
     responseType: 'id_token token',
     scope: 'openid profile email',
   })
@@ -67,8 +67,8 @@ class Auth {
   logout() {
     this.localLogout()
     this.auth0.logout({
-      returnTo: config.logoutUrl,
-      clientID: config.clientId,
+      returnTo: config.logoutUrl, // TODO: Define client env var for AUTH0_LOGOUT_URL
+      clientID: config.clientId,  // TODO: Define client env var for AUTH0_CLIENT_ID
     })
   }
 }

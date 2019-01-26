@@ -18,10 +18,10 @@ const authCheck = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: `https://${config.AUTH0_DOMAIN}/.well-known/jwks.json`,
+    jwksUri: `https://${config.AUTH0_DOMAIN}/.well-known/jwks.json`,  // TODO: Define client/server env var for AUTH0_DOMAIN
   }),
   audience: [config.AUDIENCE],
-  issuer: `https://${config.AUTH0_DOMAIN}/`,
+  issuer: `https://${config.AUTH0_DOMAIN}/`,  // TODO: Define client/server env var for AUTH0_DOMAIN
   algorithm: 'RS256',
 })
 
