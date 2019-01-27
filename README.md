@@ -85,18 +85,10 @@ $ touch src/auth/config.js
 ```
 #### Auth0 revisited
 We need to update Auth0 with proper settings:
-+ `Allowed Callbacks URL` -> `http://localhost:3000/close-popup`
++ `Allowed Callbacks URL` -> `http://localhost:3000`
 + `Allowed Web Origins` -> `http://localhost:3000`
 + `Allowed Logout URL` -> `http://localhost:3000`
 + Click on `Save Changes`
-
-#### Close the authentication pop-up window
-```
-$ mkdir -p public/close-popup
-$ touch public/close-popup/index.html
-
-// Create public/close-popup/index.html
-```
 
 #### Create an Auth0 service file
 This is where the magic will happen for authentication in our app.
