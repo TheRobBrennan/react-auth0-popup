@@ -7,12 +7,13 @@ services:
       dockerfile: ./src/Dockerfile
     container_name: 'react-hooks-auth0-web'
 
-    environment:
-      PORT: '3000'
-
-    # When using create-react-app in development, this will causing binding erros and result in a broken app
-    # ports:
-    #   - "3000:3000"
+    # environment:
+      # Host environment will need to supply the following environment variables
+      # AUTH0_DOMAIN: 'mysite.auth0.com'
+      # AUTH0_CLIENT_ID: 'some-long-string'
+      # AUTH0_REDIRECT_URL: 'https://mywebsite.com/'
+      # AUTH0_LOGOUT_URL: 'https://mywebsite.com/'
+      # AUTH0_AUDIENCE: 'https://tvmoviesapi'
 
     # If you want local changes to update the Docker container, you can pass through project files like this:
     volumes:
