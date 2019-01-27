@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  'react-hooks-auth0-web':
+    # Map our local folders to the Docker container for development purposes only
+    volumes:
+      - ./public:/usr/src/public
+      - ./src:/usr/src/src
+
+  'react-hooks-auth0-api':
+    # Map our local folders to the Docker container for development purposes only
+    volumes:
+      - ./server:/usr/src/server
+      - ./api:/usr/src/api
