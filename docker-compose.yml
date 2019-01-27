@@ -9,16 +9,14 @@ services:
 
     # environment:
       # Host environment will need to supply the following environment variables
-      # AUTH0_DOMAIN: 'mysite.auth0.com'
-      # AUTH0_CLIENT_ID: 'some-long-string'
-      # AUTH0_REDIRECT_URL: 'https://mywebsite.com/'
-      # AUTH0_LOGOUT_URL: 'https://mywebsite.com/'
-      # AUTH0_AUDIENCE: 'https://tvmoviesapi'
+      # REACT_APP_AUTH0_DOMAIN: 'mysite.auth0.com'
+      # REACT_APP_AUTH0_CLIENT_ID: 'some-long-string'
+      # REACT_APP_AUTH0_REDIRECT_URL: 'https://mywebsite.com/'
+      # REACT_APP_AUTH0_LOGOUT_URL: 'https://mywebsite.com/'
+      # REACT_APP_AUTH0_AUDIENCE: 'https://tvmoviesapi'
 
-    # If you want local changes to update the Docker container, you can pass through project files like this:
-    volumes:
-      - ./public:/usr/app/public
-      - ./src:/usr/app/src
+    ports:
+      - "3000:3000"
 
     depends_on:
       - react-hooks-auth0-api
@@ -31,14 +29,10 @@ services:
 
     environment:
       PORT: '3005'
+
       # Host environment will need to supply the following environment variables
       # AUTH0_DOMAIN: 'mysite.auth0.com'
       # AUTH0_AUDIENCE: 'https://tvmoviesapi'
 
     ports:
       - "3005:3005"
-
-    # If you want local changes to update the Docker container, you can pass through project files like this:
-    volumes:
-      - ./server:/usr/app/server
-      - ./api:/usr/app/api
