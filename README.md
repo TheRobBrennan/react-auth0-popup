@@ -7,6 +7,8 @@ Thanks to a [pull request](https://github.com/TheRobBrennan/react-with-hooks-and
 Looking for an abbreviated version of the tutorial? Here is where you can find my crib notes - very much a work-in-progress as I follow along with the tutorial.
 
 ## Initial setup
+**IMPORTANT! This project is now using Docker to spin up both the front-end web application and the back-end API. Please be sure to review `DOCKER.md` for details.**
+
 ### Our web application
 This tutorial requires the latest version of React, which is `React v16.8.0-alpha.0`. This needs to be installed after [create-react-app](https://github.com/facebook/create-react-app) has been installed.
 ```
@@ -134,8 +136,11 @@ $ touch src/components/styles.css
 ```
 
 ## Running the app on your local computer
-If you have followed this guide (and/or the original tutorial) you should be able to run your application:
+If you have followed this guide (and/or the original tutorial) - and you have created the appropriate `docker-compose.dev.secrets.yml` file as guided by `DOCKER.md` - you should be able to run your application:
+
 ```
-$ npm start:server        // Starts the API server on port 3005
-$ npm start:client        // Starts the React web application available at http://localhost:3000
+$ npm start
 ```
+
+The web application will be available at [http://localhost:3000](http://localhost:3000).
+The back-end API server will be available at [http://localhost:3005/api](http://localhost:3005/api).
