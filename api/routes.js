@@ -7,7 +7,6 @@ const path = require('path')
 // Sample data and configuration
 const allShows = require('./data/tvShows')
 const allMovies = require('./data/movies')
-const config = require('./config')
 
 // Setup the router
 const router = express.Router()
@@ -18,10 +17,10 @@ const authCheck = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: `https://${config.AUTH0_DOMAIN}/.well-known/jwks.json`,  // TODO: Define client/server env var for AUTH0_DOMAIN
+    jwksUri: `https://${process.env.AUTH0_DOMAIN}/.well-known/jwks.json`,  // TODO: Define client/server env var for AUTH0_DOMAIN
   }),
-  audience: [config.AUDIENCE],
-  issuer: `https://${config.AUTH0_DOMAIN}/`,  // TODO: Define client/server env var for AUTH0_DOMAIN
+  audience: [process.env.AUTH0_AUDIENCE],
+  issuer: `https://${process.env.AUTH0_DOMAIN}/`,  // TODO: Define client/server env var for AUTH0_DOMAIN
   algorithm: 'RS256',
 })
 

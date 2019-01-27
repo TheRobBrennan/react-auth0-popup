@@ -1,12 +1,11 @@
-import { config } from './config'
 import * as Auth0 from 'auth0-js'
 
 class Auth {
   auth0 = new Auth0.WebAuth({
-    domain: config.domain,  // TODO: Define client env var for AUTH0_DOMAIN
-    clientID: config.clientId,  // TODO: Define client env var for AUTH0_CLIENT_ID
-    redirectUri: config.redirect, // TODO: Define client env var for AUTH0_REDIRECT_URL
-    audience: config.audience,  // TODO: Define client env var for AUTH0_AUDIENCE
+    domain: process.env.REACT_APP_AUTH0_DOMAIN,
+    clientID: process.env.REACT_APP_AUTH0_CLIENT_ID,
+    redirectUri: process.env.REACT_APP_AUTH0_REDIRECT_URL,
+    audience: process.env.REACT_APP_AUTH0_AUDIENCE,
     responseType: 'id_token token',
     scope: 'openid profile email',
   })
@@ -67,8 +66,8 @@ class Auth {
   logout() {
     this.localLogout()
     this.auth0.logout({
-      returnTo: config.logoutUrl, // TODO: Define client env var for AUTH0_LOGOUT_URL
-      clientID: config.clientId,  // TODO: Define client env var for AUTH0_CLIENT_ID
+      returnTo: process.env.REACT_APP_AUTH0_LOGOUT_URL,
+      clientID: process.env.REACT_APP_AUTH0_CLIENT_ID,
     })
   }
 }
