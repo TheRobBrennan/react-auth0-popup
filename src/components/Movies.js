@@ -7,7 +7,7 @@ function Movies() {
   const [movies, setMovies] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3005/api/data/movies', {
+    fetch(`${process.env.REACT_APP_EXAMPLE_API}/movies`, {
       headers: {
         Authorization: `Bearer ${auth.getAccessToken()}`,
       },
