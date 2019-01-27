@@ -4,7 +4,7 @@ const cors = require('cors')
 const routes = require('../api/routes')
 const morgan = require('morgan')
 
-const PORT = 3005 // TODO: Define PORT as an environment variable
+const PORT = process.env.PORT
 
 // Setup the app
 const app = express()
