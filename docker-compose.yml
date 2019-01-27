@@ -30,6 +30,9 @@ services:
 
     environment:
       PORT: '3005'
+      # Host environment will need to supply the following environment variables
+      # AUTH0_DOMAIN: 'mysite.auth0.com'
+      # AUTH0_AUDIENCE: 'https://tvmoviesapi'
 
     ports:
       - "3005:3005"
@@ -38,10 +41,3 @@ services:
     volumes:
       - ./server:/usr/app/server
       - ./api:/usr/app/api
-
-    # env_file:
-    #   - ./path/to/.env
-
-    # depends_on:
-    #   - mongodb
-    #   - rabbitmq
