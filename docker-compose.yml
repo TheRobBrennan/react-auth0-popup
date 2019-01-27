@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  'react-hooks-auth0-web':
+    build:
+      context: ./
+      dockerfile: ./src/Dockerfile
+    container_name: 'react-hooks-auth0-web'
+
+    environment:
+      PORT: '3000'
+
+    # When using create-react-app in development, this will causing binding erros and result in a broken app
+    # ports:
+    #   - "3000:3000"
+
+    # If you want local changes to update the Docker container, you can pass through project files like this:
+    volumes:
+      - ./public:/usr/app/public
+      - ./src:/usr/app/src
+
+    depends_on:
+      - react-hooks-auth0-api
+
+  'react-hooks-auth0-api':
+    build:
+      context: ./
+      dockerfile: ./server/Dockerfile
+    container_name: 'react-hooks-auth0-api'
+
+    environment:
+      PORT: '3005'
+
+    ports:
+      - "3005:3005"
+
+    # If you want local changes to update the Docker container, you can pass through project files like this:
+    volumes:
+      - ./server:/usr/app/server
+      - ./api:/usr/app/api
+
+    # env_file:
+    #   - ./path/to/.env
+
+    # depends_on:
+    #   - mongodb
+    #   - rabbitmq
